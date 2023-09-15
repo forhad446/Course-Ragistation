@@ -1,5 +1,5 @@
 
-const Sidebar = ({blogs,creditHour,remainingHour}) => {
+const Sidebar = ({ blogs, creditHour, remainingHour }) => {
     return (
         <div className="p-6 bg-[#FFF] rounded-xl">
             <div>
@@ -8,20 +8,26 @@ const Sidebar = ({blogs,creditHour,remainingHour}) => {
             </div>
             <div className="py-3">
                 <h2 className="text-[#1C1B1B] text-xl font-bold mb-3">Course Name</h2>
-                <ol>
+                <ol className="list-decimal">
                     {
-                        blogs.map(blog => <li 
+                        blogs.map(blog => <li
                             className="text-[#1C1B1BCC]"
                             key={blog.id}
-                            >
+                        >
                             {blog.title}
-                            </li>)
+                        </li>)
                     }
                 </ol>
-                <hr className="mt-3"/>
+                <h3 className="text-[#c91d12] font-medium mb-2">
+                    {creditHour == 20 ? "You can't adding more course" : ''}
+                </h3>
+                <hr className="mt-3" />
             </div>
-                <h3 className="text-[#1C1B1BCC] font-medium mb-3">Total Credit Hour : {creditHour}</h3>
-                <hr className="text-[#1C1B1B33]" />
+            <h3 className="text-[#1C1B1BCC] font-medium mb-2">Total Credit Hour : {creditHour}</h3>
+            <h3 className="text-[#c91d12] font-medium mb-2">
+                {creditHour == 20 ? 'Total credit hour limited full' : ''}
+            </h3>
+            <hr className="text-[#1C1B1B33]" />
             <div className="mt-3">
                 <h2 className="text-[#1C1B1BCC] font-bold">Total Price : 48000 USD</h2>
             </div>

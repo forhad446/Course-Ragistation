@@ -6,7 +6,7 @@ import Sidebar from './components/sidebar/Sidebar'
 
 function App() {
 
-  // these state created for show title, Total Credit Hour
+  // these state created for show title, Total Credit Hour, Credit Hour Remaining
   const [blogs, setBlogs] = useState([])
   const [creditHour, setCreditHour] = useState(0)
   const [remainingHour, setRemainingHour] = useState(20)
@@ -17,19 +17,29 @@ function App() {
     if (isExit) {
       alert('already booked')
     } else {
-      // for title
-      const newArr = [...blogs, blog]
-      setBlogs(newArr)
-
+      
+      // // for title
+      // const newArr = [...blogs, blog]
+      // setBlogs(newArr)
+      
       // For Total Credit Hour
       const tme = parseInt(blog.credit.slice(0,2))
       const totalCreditHour = creditHour + tme;
-      setCreditHour(totalCreditHour)
+      if(totalCreditHour <= 20){
+        setCreditHour(totalCreditHour)
+        // for title
+      const newArr = [...blogs, blog]
+      setBlogs(newArr)
+      }
 
       // For Total remaining Hour
       const subTme = parseInt(blog.credit.slice(0,2))
       const totalRemainingHour = remainingHour - subTme;
-      setRemainingHour(totalRemainingHour)
+      if(totalRemainingHour >= 0){
+        setRemainingHour(totalRemainingHour)
+      }else{
+        alert("doesn't have more remaining hour")
+      }
     }
   }
   return (
