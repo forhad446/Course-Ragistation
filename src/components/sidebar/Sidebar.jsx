@@ -1,5 +1,5 @@
 
-const Sidebar = ({ blogs, creditHour, remainingHour }) => {
+const Sidebar = ({ blogs, creditHour, remainingHour, totalPrice }) => {
     return (
         <div className="p-6 bg-[#FFF] rounded-xl">
             <div>
@@ -29,7 +29,7 @@ const Sidebar = ({ blogs, creditHour, remainingHour }) => {
             </h3>
             <hr className="text-[#1C1B1B33]" />
             <div className="mt-3">
-                <h2 className="text-[#1C1B1BCC] font-bold">Total Price : 48000 USD</h2>
+                <h2 className="text-[#1C1B1BCC] font-bold">Total Price : {totalPrice} USD</h2>
             </div>
         </div>
     );

@@ -10,6 +10,7 @@ function App() {
   const [blogs, setBlogs] = useState([])
   const [creditHour, setCreditHour] = useState(0)
   const [remainingHour, setRemainingHour] = useState(20)
+  const [totalPrice, setTotalPrice] = useState(0)
 
   // handle title func for handling select button
   const handleTitle = (blog) => {
@@ -17,19 +18,19 @@ function App() {
     if (isExit) {
       alert('already booked')
     } else {
-      
-      // // for title
-      // const newArr = [...blogs, blog]
-      // setBlogs(newArr)
-      
       // For Total Credit Hour
       const tme = parseInt(blog.credit.slice(0,2))
       const totalCreditHour = creditHour + tme;
       if(totalCreditHour <= 20){
         setCreditHour(totalCreditHour)
-        // for title
+      // for title
       const newArr = [...blogs, blog]
       setBlogs(newArr)
+
+      // For total price 
+      const price = totalPrice + blog.price;
+      setTotalPrice(price)
+      
       }
 
       // For Total remaining Hour
@@ -40,6 +41,7 @@ function App() {
       }else{
         alert("doesn't have more remaining hour")
       }
+
     }
   }
   return (
@@ -53,6 +55,7 @@ function App() {
         blogs={blogs}
         creditHour={creditHour}
         remainingHour={remainingHour}
+        totalPrice={totalPrice}
         ></Sidebar>
       </div>
     </div>
