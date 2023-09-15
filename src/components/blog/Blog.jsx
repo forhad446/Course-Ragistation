@@ -1,8 +1,8 @@
 
-const Blog = ({blog}) => {
+const Blog = ({blog,handleTitle}) => {
     const {pic,title,details,price,credit} = blog;
     return (
-        <div id='card-container' className='w-96 p-4 bg-[#FFF] rounded-xl'>
+        <div id='card-container' className='w-72 p-4 bg-[#FFF] rounded-xl'>
                 <div>
                     <img className='w-full' src={pic} alt="" />
                 </div>
@@ -16,7 +16,9 @@ const Blog = ({blog}) => {
                     <p className='text-[#1C1B1B] font-semibold'>🕮</p>
                     <p>Credit : <span>{credit}</span></p>
                 </div>
-                <button className='text-[#FFF] bg-[#2F80ED] w-full py-3 text-xl font-semibold rounded-lg mt-5'>Select</button>
+                <button 
+                onClick={() => handleTitle(blog)} 
+                className='text-[#FFF] bg-[#2F80ED] w-full py-3 text-xl font-semibold rounded-lg mt-5'>Select</button>
             </div>
     );
 };
