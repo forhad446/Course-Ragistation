@@ -1,7 +1,7 @@
 
 const Sidebar = ({ blogs, creditHour, remainingHour, totalPrice }) => {
     return (
-        <div className="p-6 bg-[#FFF] rounded-xl">
+        <div className="mb-4 p-6 bg-[#FFF] rounded-xl">
             <div>
                 <h1 className="text-[#2F80ED] text-xl font-bold my-4">Credit Hour Remaining {remainingHour} hr</h1>
                 <hr className="text-[#1C1B1B33]" />
@@ -34,5 +34,4 @@ const Sidebar = ({ blogs, creditHour, remainingHour, totalPrice }) => {
         </div>
     );
 };
-
 export default Sidebar;

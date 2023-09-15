@@ -30,7 +30,7 @@ function App() {
       // For total price 
       const price = totalPrice + blog.price;
       setTotalPrice(price)
-      
+
       }
 
       // For Total remaining Hour
@@ -47,7 +47,7 @@ function App() {
   return (
     <div className='max-w-7xl mx-auto py-12 font-inter'>
       <Header></Header>
-      <div className='flex justify-between '>
+      <div className='flex justify-between flex-col-reverse lg:flex-row '>
         <Blogs
           handleTitle={handleTitle}
         ></Blogs>
